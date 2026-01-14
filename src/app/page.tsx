@@ -1,45 +1,123 @@
 "use client";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./page.module.css";
 import Gallery from "./components/Gallery";
 import { CTAButtons } from "./components/CTAButtons";
 import Footer from "./components/Footer";
+import CoffeeSmokeEffect from "./components/CoffeeSmokeEffect";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, 150]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.3]);
+
   return (
     <div className={styles.page}>
+      {/* Coffee Smoke Background Effect */}
+      <CoffeeSmokeEffect />
 
       {/* HERO IMAGE + OVERLAY */}
       <section className={styles.heroSection}>
-        <div className={styles.heroImageWrap}>
+        <motion.div 
+          className={styles.heroImageWrap}
+          style={{ y: heroY, opacity: heroOpacity }}
+        >
           <img className={styles.heroImage} src="/gallery/bar3.png" alt="NEO Coffee Experience bar hero" />
-        </div>
-        <div className={styles.heroOverlayStrict}>
-          <div className={styles.logo}>NEO</div>
-          <h1 className={styles.title}>Переосмысление привычного<br />через эстетику, технологию и сервис</h1>
-        </div>
+        </motion.div>
+        <motion.div 
+          className={styles.heroOverlayStrict}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.div 
+            className={styles.logo}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
+            NEO
+          </motion.div>
+          <motion.h1 
+            className={styles.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Переосмысление привычного<br />через эстетику, технологию и сервис
+          </motion.h1>
+        </motion.div>
       </section>
 
       <main className={styles.main}>
 
         {/* Миссия */}
-        <section className={styles.simpleSection}>
+        <motion.section 
+          className={styles.simpleSection}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <h2 className={styles.sectionTitle}>Миссия</h2>
           <p className={styles.sectionText}>Мы проектируем кофейный опыт как часть визуальной, вкусовой и смысловой концепции события или пространства.</p>
-        </section>
+        </motion.section>
 
         {/* Философия */}
-        <section className={styles.simpleSection}>
+        <motion.section 
+          className={styles.simpleSection}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <h2 className={styles.sectionTitle}>Философия NEO</h2>
-          <ul className={styles.sectionList}>
-            <li>Встраиваем кофе в концепцию события — визуально, вкусово и сервисно.</li>
-            <li>Делаем кофе частью замысла, а не отдельной зоной.</li>
-            <li>Задаём стандарт того, как кофе должен ощущаться в пространстве.</li>
-          </ul>
-        </section>
+          <motion.ul 
+            className={styles.sectionList}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+              Встраиваем кофе в концепцию события — визуально, вкусово и сервисно.
+            </motion.li>
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+              Делаем кофе частью замысла, а не отдельной зоной.
+            </motion.li>
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+              Задаём стандарт того, как кофе должен ощущаться в пространстве.
+            </motion.li>
+          </motion.ul>
+        </motion.section>
 
         {/* Ценности */}
-        <section className={styles.cardsSection}>
-          <div className={styles.cardsRow}>
+        <motion.section 
+          className={styles.cardsSection}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className={styles.cardsRow}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.12
+                }
+              }
+            }}
+          >
             {[
               {title: "Концепция прежде всего", desc: "Кофе — отражение идеи, её тон и характер."},
               {title: "Эстетика как стандарт", desc: "Каждая деталь — часть визуального языка."},
@@ -48,17 +126,44 @@ export default function Home() {
               {title: "Качество без компромиссов", desc: "Продукты, оборудование и рецептуры — уровня брендов и мероприятий."},
               {title: "Философия", desc: "Встраиваем кофе в концепцию события — визуально, вкусово и сервисно, делая его частью общего замысла, а не отдельной зоной."},
             ].map((v, i) => (
-              <div key={v.title} className={styles.valueCard}>
+              <motion.div 
+                key={v.title} 
+                className={styles.valueCard}
+                variants={{
+                  hidden: { opacity: 0, y: 40, scale: 0.95 },
+                  visible: { opacity: 1, y: 0, scale: 1 }
+                }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.03, y: -8 }}
+              >
                 <div className={styles.valueCardTitle}>{v.title}</div>
                 <div className={styles.valueCardDesc}>{v.desc}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* Форматы */}
-        <section className={styles.cardsSection}>
-          <div className={styles.formatsRow}>
+        <motion.section 
+          className={styles.cardsSection}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className={styles.formatsRow}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             {[
               {
                 title: "NEO FORMAT",
@@ -76,26 +181,47 @@ export default function Home() {
                 notes:["индивидуальный проект","уникальная архитектура бара","полный контроль опыта"]
               }
             ].map((f)=>(
-              <div key={f.title} className={styles.formatCard}>
+              <motion.div 
+                key={f.title} 
+                className={styles.formatCard}
+                variants={{
+                  hidden: { opacity: 0, y: 50, scale: 0.9 },
+                  visible: { opacity: 1, y: 0, scale: 1 }
+                }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05, y: -12 }}
+              >
                 <div className={styles.formatTitle}>{f.title}</div>
                 <div className={styles.formatPrice}>{f.price}</div>
                 <ul className={styles.formatNotes}>
                   {f.notes.map(n=>(<li key={n}>{n}</li>))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* Галерея */}
-        <section className={styles.gallerySection}>
+        <motion.section 
+          className={styles.gallerySection}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <Gallery />
-        </section>
+        </motion.section>
 
         {/* Контакты / финальный экран */}
-        <section className={styles.final + " section"}>
+        <motion.section 
+          className={styles.final + " section"}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <CTAButtons />
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </div>

@@ -11,14 +11,21 @@
   aspect-ratio: 16/9;
   min-width: 190px;
   min-height: 110px;
-  border-radius: 22px;
+  border-radius: 18px;
   overflow: hidden;
-  background: #f1ece5;
-  box-shadow: 0 4px 22px rgba(146,120,78,0.06);
+  background: #1a1816;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  border: 1px solid #2d2824;
+  transition: all 0.3s ease;
+}
+.galleryItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  border-color: #3d3530;
 }
 .galleryItem img,
 .galleryItem .next-image {
@@ -27,6 +34,12 @@
   object-fit: cover;
   display: block;
   border-radius: 18px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+.galleryItem:hover img,
+.galleryItem:hover .next-image {
+  opacity: 1;
 }
 
 @media (max-width: 1000px) {
@@ -35,7 +48,7 @@
     gap: 18px;
   }
   .galleryItem {
-    border-radius: 18px;
+    border-radius: 16px;
   }
 }
 
@@ -45,13 +58,13 @@
     gap: 14px;
   }
   .galleryItem { 
-    border-radius: 16px; 
+    border-radius: 14px; 
     min-width: 88vw;
     max-width: 94vw;
   }
   .galleryItem img,
   .galleryItem .next-image {
-    border-radius: 16px;
+    border-radius: 14px;
   }
 }
 
@@ -60,7 +73,104 @@
     gap: 12px;
   }
   .galleryItem {
-    border-radius: 14px;
+    border-radius: 12px;
     min-width: 90vw;
+  }
+  .galleryItem img,
+  .galleryItem .next-image {
+    border-radius: 12px;
+  }
+}
+
+/* Lightbox styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  max-width: 1400px;
+  max-height: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
+  cursor: default;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(212, 165, 116, 0.15);
+  border: 1.5px solid #d4a574;
+  color: #d4a574;
+  font-size: 24px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.closeButton:hover {
+  background: #d4a574;
+  color: #0f0e0d;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+}
+
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 10px;
+  }
+  
+  .lightboxContent {
+    width: 95vw;
+    height: 85vh;
+    border-radius: 12px;
+  }
+  
+  .closeButton {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lightboxContent {
+    width: 98vw;
+    height: 80vh;
+    border-radius: 8px;
+  }
+  
+  .closeButton {
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
   }
 }
