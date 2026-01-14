@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEO Coffee Experience
 
-## Getting Started
+Премиальный одностраничный лендинг для выездного кофейного бара нового формата.
 
-First, run the development server:
+## 🎯 Описание проекта
+
+NEO Coffee Experience — это визуальный манифест бренда премиального выездного кофейного бара. Сайт создан для демонстрации философии, ценностей и форматов услуг компании.
+
+### Особенности
+
+- ✨ Премиальный минималистичный дизайн
+- 🎨 Современная архитектурная вёрстка
+- 📱 Полностью адаптивный под все устройства
+- ⚡ Высокая производительность (SSG)
+- 🚫 Без форм, cookies и аналитики
+- 🎭 Фирменная типографика (Manrope)
+
+## 🛠 Технологический стек
+
+- **React 19** — современная библиотека UI
+- **Next.js 16** — фреймворк с App Router
+- **TypeScript** — типизированный JavaScript
+- **CSS Modules** — модульные стили
+- **Framer Motion** — плавные анимации
+- **@fontsource/manrope** — премиальная типографика
+
+## 🚀 Быстрый старт
+
+### Установка зависимостей
+
+```bash
+npm install
+```
+
+### Запуск в режиме разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Сборка для продакшена
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📂 Структура проекта
 
-To learn more about Next.js, take a look at the following resources:
+```
+neo-coffee-landing/
+├── src/
+│   └── app/
+│       ├── components/          # React компоненты
+│       │   ├── CTAButtons.tsx   # Кнопки призыва к действию
+│       │   ├── Footer.tsx       # Футер с контактами
+│       │   └── Gallery.tsx      # Галерея изображений баров
+│       ├── page.tsx             # Главная страница
+│       ├── layout.tsx           # Layout приложения
+│       └── globals.css          # Глобальные стили
+├── public/
+│   └── gallery/                 # Изображения баров
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Дизайн-концепция
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Вдохновлён европейскими премиум-лендингами в стиле [koenig-koffein.de](https://www.koenig-koffein.de/):
 
-## Deploy on Vercel
+- Светлый фон с архитектурными отступами
+- Крупная типографика и много "воздуха"
+- Акцентный кофейный цвет (#b56c34)
+- Минималистичные карточки с мягкими тенями
+- Адаптивная галерея изображений
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Контент
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Лендинг включает следующие секции:
+
+1. **Hero** — главное изображение, логотип и слоган
+2. **Миссия** — описание подхода к кофейному опыту
+3. **Философия** — ключевые принципы работы
+4. **Ценности** — 5 основных ценностей бренда
+5. **Форматы** — 3 варианта услуг с ценами
+6. **Галерея** — фотографии барных стоек
+7. **Контакты** — CTA-кнопки и футер
+
+## 🎯 Призывы к действию
+
+- Telegram: связь с командой
+- Скачать презентацию (PDF)
+
+## 📄 Лицензия
+
+Частный проект NEO Coffee Experience.
+
+---
+
+Создано с ❤️ для NEO Coffee Experience
