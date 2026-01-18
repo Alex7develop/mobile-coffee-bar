@@ -6,6 +6,47 @@ import { CTAButtons } from "./components/CTAButtons";
 import Footer from "./components/Footer";
 import CoffeeSmokeEffect from "./components/CoffeeSmokeEffect";
 import AlternativeBrewMethods from "./components/AlternativeBrewMethods";
+import ValuesAccordion from "./components/ValuesAccordion";
+import PhilosophyAccordion from "./components/PhilosophyAccordion";
+import FormatsAccordion from "./components/FormatsAccordion";
+
+const valuesData = [
+  {title: "Концепция прежде всего", desc: "Кофе — отражение идеи, её тон и характер."},
+  {title: "Эстетика как стандарт", desc: "Каждая деталь — часть визуального языка."},
+  {title: "Опыт выше скорости", desc: "Мы создаём момент, а не поток."},
+  {title: "Сервис как искусство", desc: "Отношение важнее демонстрации навыков."},
+  {title: "Качество без компромиссов", desc: "Продукты, оборудование и рецептуры — уровня брендов и мероприятий."},
+];
+
+const philosophyItems = [
+  "Встраиваем кофе в концепцию события — визуально, вкусово и сервисно.",
+  "Делаем кофе частью замысла, а не отдельной зоной.",
+  "Задаём стандарт того, как кофе должен ощущаться в пространстве.",
+];
+
+const philosophyData = [
+  {title: "Встраиваем кофе в концепцию события", desc: "Визуально, вкусово и сервисно."},
+  {title: "Делаем кофе частью замысла", desc: "А не отдельной зоной."},
+  {title: "Задаём стандарт того, как кофе должен ощущаться", desc: "В пространстве."},
+];
+
+const formatsData = [
+  {
+    title: "NEO FORMAT",
+    price: "100 000 ₽",
+    notes: ["лаконичное присутствие", "чистый визуал", "базовый опыт"]
+  },
+  {
+    title: "NEO EXPERIENCE",
+    price: "180 000 ₽",
+    notes: ["интеграция в концепцию события", "расширенный бар", "авторская подача"]
+  },
+  {
+    title: "NEO SIGNATURE",
+    price: "250 000 ₽",
+    notes: ["индивидуальный проект", "уникальная архитектура бара", "полный контроль опыта"]
+  },
+];
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -23,7 +64,7 @@ export default function Home() {
           className={styles.heroImageWrap}
           style={{ y: heroY, opacity: heroOpacity }}
         >
-          <img className={styles.heroImage} src="/gallery/bar3.png" alt="NEO Coffee Experience bar hero" />
+          <img className={styles.heroImage} src="/gallery/bar4.png" alt="NEO Coffee Experience bar hero" />
         </motion.div>
         <motion.div 
           className={styles.heroOverlayStrict}
@@ -37,7 +78,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            NEO
+            НЕО
           </motion.div>
           <motion.h1 
             className={styles.title}
@@ -66,140 +107,35 @@ export default function Home() {
 
         {/* Философия */}
         <motion.section 
-          className={styles.simpleSection}
-          initial={{ opacity: 0, y: 60 }}
+          className={styles.accordionSection}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className={styles.sectionTitle}>Философия NEO</h2>
-          <motion.ul 
-            className={styles.sectionList}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15
-                }
-              }
-            }}
-          >
-            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
-              Встраиваем кофе в концепцию события — визуально, вкусово и сервисно.
-            </motion.li>
-            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
-              Делаем кофе частью замысла, а не отдельной зоной.
-            </motion.li>
-            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
-              Задаём стандарт того, как кофе должен ощущаться в пространстве.
-            </motion.li>
-          </motion.ul>
+          <PhilosophyAccordion items={philosophyData} />
         </motion.section>
 
         {/* Ценности */}
         <motion.section 
-          className={styles.cardsSection}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className={styles.accordionSection}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div 
-            className={styles.cardsRow}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.12
-                }
-              }
-            }}
-          >
-            {[
-              {title: "Концепция прежде всего", desc: "Кофе — отражение идеи, её тон и характер."},
-              {title: "Эстетика как стандарт", desc: "Каждая деталь — часть визуального языка."},
-              {title: "Опыт выше скорости", desc: "Мы создаём момент, а не поток."},
-              {title: "Сервис как искусство", desc: "Отношение важнее демонстрации навыков."},
-              {title: "Качество без компромиссов", desc: "Продукты, оборудование и рецептуры — уровня брендов и мероприятий."},
-              {title: "Философия", desc: "Встраиваем кофе в концепцию события — визуально, вкусово и сервисно, делая его частью общего замысла, а не отдельной зоной."},
-            ].map((v, i) => (
-              <motion.div 
-                key={v.title} 
-                className={styles.valueCard}
-                variants={{
-                  hidden: { opacity: 0, y: 40, scale: 0.95 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.03, y: -8 }}
-              >
-                <div className={styles.valueCardTitle}>{v.title}</div>
-                <div className={styles.valueCardDesc}>{v.desc}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <ValuesAccordion values={valuesData.slice(0, 5)} />
         </motion.section>
 
         {/* Форматы */}
         <motion.section 
-          className={styles.cardsSection}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className={styles.accordionSection}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div 
-            className={styles.formatsRow}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15
-                }
-              }
-            }}
-          >
-            {[
-              {
-                title: "NEO FORMAT",
-                price: "100 000 ₽",
-                notes:["лаконичное присутствие","чистый визуал","базовый опыт"]
-              },
-              {
-                title: "NEO EXPERIENCE",
-                price: "180 000 ₽",
-                notes:["интеграция в концепцию события","расширенный бар","авторская подача"]
-              },
-              {
-                title: "NEO SIGNATURE",
-                price: "250 000 ₽",
-                notes:["индивидуальный проект","уникальная архитектура бара","полный контроль опыта"]
-              }
-            ].map((f)=>(
-              <motion.div 
-                key={f.title} 
-                className={styles.formatCard}
-                variants={{
-                  hidden: { opacity: 0, y: 50, scale: 0.9 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, y: -12 }}
-              >
-                <div className={styles.formatTitle}>{f.title}</div>
-                <div className={styles.formatPrice}>{f.price}</div>
-                <ul className={styles.formatNotes}>
-                  {f.notes.map(n=>(<li key={n}>{n}</li>))}
-                </ul>
-              </motion.div>
-            ))}
-          </motion.div>
+          <FormatsAccordion formats={formatsData} />
         </motion.section>
 
         {/* Галерея */}

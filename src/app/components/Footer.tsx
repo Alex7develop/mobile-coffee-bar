@@ -42,7 +42,7 @@ export default function Footer() {
             visible: { opacity: 1, y: 0 }
           }}
         >
-          Связаться с NEO
+          Связаться с НЕО
         </motion.div>
         <motion.a 
           href="https://t.me/neo_coffee_experience" 

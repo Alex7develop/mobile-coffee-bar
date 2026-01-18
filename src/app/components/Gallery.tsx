@@ -5,12 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Gallery.module.css";
 
 const images = [
-  "/gallery/bar1.png",
-  "/gallery/bar2.png",
   "/gallery/bar3.png",
   "/gallery/bar4.png",
-  "/gallery/bar5.png",
-  "/gallery/bar7.png",
+  "/gallery/bar2.png",
 ];
 
 export default function Gallery() {
