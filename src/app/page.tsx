@@ -9,6 +9,7 @@ import AlternativeBrewMethods from "./components/AlternativeBrewMethods";
 import ValuesAccordion from "./components/ValuesAccordion";
 import PhilosophyAccordion from "./components/PhilosophyAccordion";
 import FormatsAccordion from "./components/FormatsAccordion";
+import MissionAccordion from "./components/MissionAccordion";
 
 const valuesData = [
   {title: "Концепция прежде всего", desc: "Кофе — отражение идеи, её тон и характер."},
@@ -95,14 +96,13 @@ export default function Home() {
 
         {/* Миссия */}
         <motion.section 
-          className={styles.simpleSection}
-          initial={{ opacity: 0, y: 60 }}
+          className={styles.accordionSection}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className={styles.sectionTitle}>Миссия</h2>
-          <p className={styles.sectionText}>Мы проектируем кофейный опыт как часть визуальной, вкусовой и смысловой концепции события или пространства.</p>
+          <MissionAccordion text="Мы проектируем кофейный опыт как часть визуальной, вкусовой и смысловой концепции события или пространства." />
         </motion.section>
 
         {/* Философия */}
