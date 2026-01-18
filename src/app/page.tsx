@@ -5,6 +5,7 @@ import Gallery from "./components/Gallery";
 import { CTAButtons } from "./components/CTAButtons";
 import Footer from "./components/Footer";
 import CoffeeSmokeEffect from "./components/CoffeeSmokeEffect";
+import AlternativeBrewMethods from "./components/AlternativeBrewMethods";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -210,6 +211,17 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <Gallery />
+        </motion.section>
+
+        {/* Альтернативные методы заваривания с 3D моделями */}
+        <motion.section 
+          className={styles.brewMethodsSection}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <AlternativeBrewMethods />
         </motion.section>
 
         {/* Контакты / финальный экран */}
