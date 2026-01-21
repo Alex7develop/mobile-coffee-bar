@@ -59,7 +59,15 @@ export default function Gallery() {
             onClick={() => setSelectedImage(src)}
             style={{ cursor: 'pointer' }}
           >
-            <Image src={src} alt={`bar image ${i+1}`} fill style={{objectFit:'cover'}}/>
+            <Image 
+              src={src} 
+              alt={`bar image ${i+1}`} 
+              fill 
+              style={{objectFit:'cover'}}
+              loading="lazy"
+              quality={85}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </motion.div>
         ))}
       </motion.div>

@@ -37,8 +37,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/dd9b8664b2c64a2bb5d94788691dc20e/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/dd9b8664b2c64a2bb5d94788691dc20e/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -80,8 +81,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/98f57300ff0c4c7cbab22058f9e757c5/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/98f57300ff0c4c7cbab22058f9e757c5/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -123,8 +125,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/94b71d4d375d40e58ec0fa293e906c8a/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/94b71d4d375d40e58ec0fa293e906c8a/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -166,8 +169,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/d566f2747d2e409e9c3ef56a297ff7b0/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/d566f2747d2e409e9c3ef56a297ff7b0/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -209,8 +213,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/9ccda2fddba846e6ba97eb774b8a09c6/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/9ccda2fddba846e6ba97eb774b8a09c6/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -252,8 +257,9 @@ export default function AlternativeBrewMethods() {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; fullscreen; xr-spatial-tracking"
-                src="https://sketchfab.com/models/85cff00d771c4be4ab19ccf3b21658a0/embed?autostart=1&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/85cff00d771c4be4ab19ccf3b21658a0/embed?autostart=0&transparent=1&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&dnt=1&preload=1"
                 className={styles.iframe}
+                loading="lazy"
               />
             </div>
           </div>
@@ -283,8 +289,8 @@ export default function AlternativeBrewMethods() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <div className={styles.noteIcon}>☕</div>
-        <p>Используйте мышь для вращения 3D моделей и детального осмотра оборудования</p>
+        <div className={styles.noteIcon}></div>
+        <p>Используйте мышь для вращения 3D моделей и детального осмотра</p>
       </motion.div>
     </div>
   );

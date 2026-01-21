@@ -1,10 +1,10 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import styles from "./page.module.css";
 import Gallery from "./components/Gallery";
 import { CTAButtons } from "./components/CTAButtons";
 import Footer from "./components/Footer";
-import CoffeeSmokeEffect from "./components/CoffeeSmokeEffect";
 import AlternativeBrewMethods from "./components/AlternativeBrewMethods";
 import ValuesAccordion from "./components/ValuesAccordion";
 import PhilosophyAccordion from "./components/PhilosophyAccordion";
@@ -56,16 +56,22 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      {/* Coffee Smoke Background Effect */}
-      <CoffeeSmokeEffect />
-
       {/* HERO IMAGE + OVERLAY */}
       <section className={styles.heroSection}>
         <motion.div 
           className={styles.heroImageWrap}
           style={{ y: heroY, opacity: heroOpacity }}
         >
-          <img className={styles.heroImage} src="/gallery/bar4.png" alt="NEO Coffee Experience bar hero" />
+          <Image 
+            className={styles.heroImage} 
+            src="/gallery/bar4.png" 
+            alt="NEO Coffee Experience bar hero"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </motion.div>
         <motion.div 
           className={styles.heroOverlayStrict}

@@ -8,49 +8,55 @@
 }
 
 .primary {
-  background: transparent;
-  color: #d4a574;
-  border-radius: 50px;
-  padding: 15px 38px;
-  font-size: 22px;
-  font-weight: 600;
-  border: 1.8px solid #d4a574;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
-  letter-spacing: 0.02em;
+  background: var(--text-primary);
+  color: #ffffff;
+  border-radius: 0;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid var(--text-primary);
+  transition: all 0.2s ease;
+  box-shadow: none;
+  letter-spacing: 0.5px;
   cursor: pointer;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
   will-change: transform;
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  text-transform: uppercase;
 }
 .secondary {
   background: transparent;
-  color: #b89968;
-  border-radius: 50px;
-  padding: 15px 38px;
-  font-size: 22px;
+  color: var(--text-primary);
+  border-radius: 0;
+  padding: 16px 40px;
+  font-size: 16px;
   font-weight: 500;
-  border: 1.8px solid #4a4137;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid var(--text-primary);
+  transition: all 0.2s ease;
   cursor: pointer;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
   will-change: transform;
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .primary:hover {
-  background: #d4a574;
-  color: #0f0e0d;
-  box-shadow: 0 12px 36px rgba(212,165,116,0.35);
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+  box-shadow: none;
+  transform: none;
 }
 .secondary:hover {
-  background: transparent;
-  color: #d4a574;
-  border-color: #d4a574;
-  box-shadow: 0 8px 24px rgba(212,165,116,0.15);
+  background: var(--text-primary);
+  color: #ffffff;
+  border-color: var(--text-primary);
+  box-shadow: none;
+  transform: none;
 }
 
 @media (max-width: 768px) {
@@ -62,8 +68,8 @@
   }
   .primary, .secondary {
     width: 100%;
-    font-size: 18px;
-    padding: 13px 24px;
+    font-size: 14px;
+    padding: 14px 24px;
     text-align: center;
   }
 }
@@ -74,8 +80,7 @@
     margin: 18px 0 8px 0;
   }
   .primary, .secondary {
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 40px;
+    font-size: 13px;
+    padding: 13px 20px;
   }
 }

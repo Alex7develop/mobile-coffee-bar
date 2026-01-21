@@ -1,15 +1,15 @@
 .page {
-  --background: #0f0e0d;
-  --foreground: #1a1816;
-  --card-radius: 28px;
+  --background: #ffffff;
+  --foreground: #f8f8f8;
+  --card-radius: 0px;
   --section-gap: 98px;
-  --card-shadow: 0 8px 36px rgba(0, 0, 0, 0.35);
-  --ctrl-accent: #d4a574;
-  --text-primary: #e8e3dc;
-  --text-secondary: #c9b8a0;
-  --grey-bg: #1a1816;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --ctrl-accent: #8b7355;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --grey-bg: #f8f8f8;
   --card-spacer: 38px;
-  --border-soft: #2d2824;
+  --border-soft: #e0e0e0;
   --max-width: 1160px;
 
   display: flex;
@@ -28,7 +28,7 @@
   box-shadow: none;
   overflow: hidden;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  background: #1a1816;
+  background: var(--foreground);
   z-index: 2;
 }
 .heroImageWrap {
@@ -67,11 +67,11 @@
 .logo {
   font-size: clamp(3.5rem, 7.9vw, 10.9rem);
   font-weight: 900;
-  color: var(--ctrl-accent);
+  color: var(--text-primary);
   letter-spacing: clamp(3px, 1vw, 10px);
   margin-bottom: 1.9vw;
   margin-top: 2vw;
-  text-shadow: 0 8px 32px rgba(212,165,116,0.18);
+  text-shadow: none;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   line-height: 1;
@@ -84,13 +84,13 @@
 }
 
 .title {
-  color: #e8e3dc;
+  color: var(--text-primary);
   font-size: clamp(1.1rem, 3.2vw, 2.7rem);
   font-weight: 700;
   text-align: center;
   margin: 0 0 1vw 0;
   padding: 0 4vw;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  text-shadow: none;
   letter-spacing: -0.015em;
   line-height: 1.15;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
@@ -151,8 +151,9 @@
   font-size: clamp(1.15rem, 2.5vw, 1.47rem);
   font-weight: 700;
   color: var(--ctrl-accent);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 .sectionText {
   font-size: clamp(1rem, 2vw, 1.19rem);
@@ -161,6 +162,8 @@
   line-height: 1.62;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
   max-width: 720px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .sectionList {
   font-size: clamp(0.95rem, 1.8vw, 1.09rem);
@@ -206,32 +209,34 @@
   }
 }
 .valueCard, .formatCard {
-  background: #1a1816;
-  border-radius: var(--card-radius);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  background: var(--foreground);
+  border-radius: 0;
+  box-shadow: none;
   padding: clamp(22px, 4vw, 34px) clamp(20px, 3.5vw, 32px) clamp(20px, 3.5vw, 28px) clamp(20px, 3.5vw, 32px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
-  border: 1.4px solid var(--border-soft);
+  border: 1px solid var(--border-soft);
   min-height: clamp(120px, 18vw, 152px);
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  transition: border-color 0.2s ease;
+  will-change: border-color;
 }
 .valueCard:hover, .formatCard:hover {
-  border-color: #4d423a;
-  box-shadow: 0 16px 56px rgba(0,0,0,0.6);
+  border-color: var(--text-primary);
+  box-shadow: none;
+  transform: none;
 }
 .valueCardTitle, .formatTitle {
   font-size: clamp(1.05rem, 2vw, 1.23rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 5px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 .valueCardDesc {
   font-size: clamp(0.95rem, 1.7vw, 1.07rem);
@@ -239,6 +244,8 @@
   line-height: 1.62;
   font-weight: 400;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .formatPrice {
   font-size: clamp(1rem, 1.8vw, 1.11rem);
@@ -246,6 +253,8 @@
   font-weight: 700;
   margin-bottom: 8px;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .formatNotes {
   list-style: disc inside;
@@ -254,6 +263,8 @@
   margin: 0;
   line-height: 1.6;
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .gallerySection {
@@ -320,7 +331,7 @@
     position: relative;
     min-height: auto;
     padding: 24px 5vw 32px 5vw;
-    background: #1a1816;
+    background: var(--foreground);
     border-radius: 0;
   }
   .logo {
@@ -331,7 +342,7 @@
   .title {
     font-size: clamp(1rem, 4vw, 1.4rem);
     line-height: 1.2;
-    color: #e8e3dc;
+    color: var(--text-primary);
   }
   .heroActions {
     flex-direction: column;
@@ -340,7 +351,7 @@
     padding: 0;
   }
   .page {
-    --card-radius: 20px;
+    --card-radius: 0px;
   }
 }
 
@@ -372,7 +383,6 @@
     min-width: 92vw;
     max-width: 96vw;
     padding: 18px 16px 16px 16px;
-    border-radius: 16px;
   }
   .main {
     padding: 0 4vw;
